@@ -5,9 +5,17 @@ import SergeyButton from './SergeyButton'
 import SergeySelect from './SergeySelect'
 
 class App extends Component {
+
   constructor(props) {
-    super(props);
-    this.state = {textOut: "---"};
+    super(props)
+  }
+
+  componentWillMount() {
+    this.state = { textOut: false }
+  }
+
+  displayImportantInformation () {
+    return this.state.textOut ? <span>First state</span> : <span>Second state</span>
   }
 
   render() {
@@ -21,12 +29,12 @@ class App extends Component {
           <SergeySelect />
         </div>
         <div className="App-intro">
-          <SergeyButton onCli={this}/>
-          <div>{this.state.textOut}</div>
+          <SergeyButton parent={this}/><br/>
+          { this.displayImportantInformation() }
         </div>
       </div>
-    );
+    )
   }
 }
 
-export default App;
+export default App
