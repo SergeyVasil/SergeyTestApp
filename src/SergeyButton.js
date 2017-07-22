@@ -1,13 +1,21 @@
 import React from 'react';
 
-function handleClick(parent) {
-  parent.setState({textOut: "1234"});
-}
+class SergeyButton extends React.Component {
 
-const SergeyButton = (props) => {
-  return (
-    <button onClick= {handleClick(props.onCli)}>Кнопка</button>
-  )
-}
+    constructor (props) {
+      super(props)
+    }
 
+    toggleParentState = () => {
+      var parent = this.props.parent
+      parent.state.textOut ? parent.setState( {textOut : false} ) : parent.setState( {textOut : true} )
+    }
+
+    render () {
+      return (
+        <button onClick={ this.toggleParentState }>Кнопка</button>
+      )
+    }
+
+}
 export default SergeyButton
