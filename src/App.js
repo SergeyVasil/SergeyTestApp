@@ -7,7 +7,9 @@ import SergeySelect from './SergeySelect'
 class App extends Component {
   constructor(props) {
     super(props);
-    this.state = {textOut: "---------"}
+    this.state = {textOut: "---------",
+                  selectValue: "vnon"
+                  }
   }
 
   render() {
@@ -18,7 +20,7 @@ class App extends Component {
           <h2>Welcome to React</h2>
         </div>
         <div className="App-select">
-         <SergeySelect />
+         <SergeySelect  parent={this}/>
         </div>
         <div className="App-intro">
           <SergeyButton parent={this}/>
