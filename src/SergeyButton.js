@@ -7,8 +7,8 @@ class SergeyButton extends React.Component {
     }
 
     toggleParentState = () => {
-      console.log(this.props.parent);
-      this.props.parent.setState( {textOut : "++++++++++"} )
+      if (this.props.parent.state.selectValue=="zone") this.props.parent.setState( {textOut : "Во-первых"} )
+      if (this.props.parent.state.selectValue=="ztoo") this.props.parent.setState( {textOut : "Во-вторых"} )
     }
 
     render () {

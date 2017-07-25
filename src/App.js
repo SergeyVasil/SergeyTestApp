@@ -8,7 +8,7 @@ class App extends Component {
   constructor(props) {
     super(props);
     this.state = {textOut: "---------",
-                  selectValue: "vnon"
+                  selectValue: "zone"
                   }
   }
 
@@ -24,7 +24,7 @@ class App extends Component {
         </div>
         <div className="App-intro">
           <SergeyButton parent={this}/>
-          <div>{this.state.textOut}</div>
+          <div className="App-outp">{this.state.textOut}</div>
         </div>
       </div>
     );
